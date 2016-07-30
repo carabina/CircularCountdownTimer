@@ -15,6 +15,10 @@
 		DA1023E61D4D1188005738AD /* CountdownTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1023E51D4D1188005738AD /* CountdownTimerView.swift */; };
 		DA1023E81D4D11D1005738AD /* CenteredTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1023E71D4D11D1005738AD /* CenteredTextLayer.swift */; };
 		DA1023EA1D4D1EF7005738AD /* GlobalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1023E91D4D1EF7005738AD /* GlobalTimer.swift */; };
+		DA5B9A171D4D71B600AD1AD1 /* iOS Screenshot 1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5B9A131D4D71B600AD1AD1 /* iOS Screenshot 1.png */; };
+		DA5B9A181D4D71B600AD1AD1 /* iOS Screenshot 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5B9A141D4D71B600AD1AD1 /* iOS Screenshot 2.png */; };
+		DA5B9A191D4D71B600AD1AD1 /* macOS Screenshot 1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5B9A151D4D71B600AD1AD1 /* macOS Screenshot 1.png */; };
+		DA5B9A1A1D4D71B600AD1AD1 /* macOS Screenshot 2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA5B9A161D4D71B600AD1AD1 /* macOS Screenshot 2.png */; };
 		DAB7C4A41D4D555400CEF027 /* NSBezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7C4A31D4D555400CEF027 /* NSBezierPath+Extensions.swift */; };
 		DAB7C4AD1D4D567600CEF027 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7C4AC1D4D567600CEF027 /* AppDelegate.swift */; };
 		DAB7C4AF1D4D567600CEF027 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7C4AE1D4D567600CEF027 /* ViewController.swift */; };
@@ -37,6 +41,10 @@
 		DA1023E51D4D1188005738AD /* CountdownTimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownTimerView.swift; sourceTree = "<group>"; };
 		DA1023E71D4D11D1005738AD /* CenteredTextLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredTextLayer.swift; sourceTree = "<group>"; };
 		DA1023E91D4D1EF7005738AD /* GlobalTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalTimer.swift; sourceTree = "<group>"; };
+		DA5B9A131D4D71B600AD1AD1 /* iOS Screenshot 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Screenshot 1.png"; sourceTree = "<group>"; };
+		DA5B9A141D4D71B600AD1AD1 /* iOS Screenshot 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Screenshot 2.png"; sourceTree = "<group>"; };
+		DA5B9A151D4D71B600AD1AD1 /* macOS Screenshot 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macOS Screenshot 1.png"; sourceTree = "<group>"; };
+		DA5B9A161D4D71B600AD1AD1 /* macOS Screenshot 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macOS Screenshot 2.png"; sourceTree = "<group>"; };
 		DAB7C4A31D4D555400CEF027 /* NSBezierPath+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Extensions.swift"; sourceTree = "<group>"; };
 		DAB7C4AA1D4D567600CEF027 /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB7C4AC1D4D567600CEF027 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +78,7 @@
 				DA1023D21D4D1169005738AD /* iOS Example */,
 				DAB7C4AB1D4D567600CEF027 /* macOS Example */,
 				DAB7C4B91D4D568F00CEF027 /* Shared */,
+				DA5B9A121D4D71A200AD1AD1 /* Screenshots */,
 				DA1023D11D4D1169005738AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +113,17 @@
 				DAB7C4A31D4D555400CEF027 /* NSBezierPath+Extensions.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		DA5B9A121D4D71A200AD1AD1 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				DA5B9A131D4D71B600AD1AD1 /* iOS Screenshot 1.png */,
+				DA5B9A141D4D71B600AD1AD1 /* iOS Screenshot 2.png */,
+				DA5B9A151D4D71B600AD1AD1 /* macOS Screenshot 1.png */,
+				DA5B9A161D4D71B600AD1AD1 /* macOS Screenshot 2.png */,
+			);
+			name = Screenshots;
 			sourceTree = "<group>";
 		};
 		DAB7C4AB1D4D567600CEF027 /* macOS Example */ = {
@@ -213,8 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1023DE1D4D1169005738AD /* LaunchScreen.storyboard in Resources */,
+				DA5B9A171D4D71B600AD1AD1 /* iOS Screenshot 1.png in Resources */,
 				DA1023DB1D4D1169005738AD /* Assets.xcassets in Resources */,
+				DA5B9A1A1D4D71B600AD1AD1 /* macOS Screenshot 2.png in Resources */,
 				DA1023D91D4D1169005738AD /* Main.storyboard in Resources */,
+				DA5B9A181D4D71B600AD1AD1 /* iOS Screenshot 2.png in Resources */,
+				DA5B9A191D4D71B600AD1AD1 /* macOS Screenshot 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
