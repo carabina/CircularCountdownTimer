@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CountdownTimerView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bph-mh-GGH" customClass="CountdownTimerView" customModule="CountdownTimerView" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="RiI-hJ-LqM"/>
+                                    <constraint firstAttribute="height" constant="200" id="ijI-80-Q14"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="timerDuration">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEj-dJ-ehJ">
+                                <state key="normal" title="Random Color"/>
+                                <connections>
+                                    <action selector="didTapRandomColorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bLp-Kv-Lux"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qEj-dJ-ehJ" secondAttribute="bottom" constant="20" id="3rL-ai-BsU"/>
+                            <constraint firstItem="qEj-dJ-ehJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A3Y-Y2-M1D"/>
+                            <constraint firstItem="Bph-mh-GGH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z61-fA-j1F"/>
+                            <constraint firstItem="Bph-mh-GGH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zv4-hL-mmr"/>
+                            <constraint firstItem="Bph-mh-GGH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iAf-PD-2Va"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countdownTimerView" destination="Bph-mh-GGH" id="yMR-Jh-maP"/>
+                        <outlet property="randomColorButton" destination="qEj-dJ-ehJ" id="jOZ-bj-CHf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
