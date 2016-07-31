@@ -1,6 +1,8 @@
 # Countdown-Timer-View-Swift
 A UIView / NSView subclass which displays a circular countdown timer.
 
+Written for XCode 8 / Swift 3.0 / iOS 10 / macOS Sierra
+
 iOS Example Application Screenshots
 
 ![iOS Screenshot 1](iOS Screenshot 1.png "iOS Screenshot 1")
