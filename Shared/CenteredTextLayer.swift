@@ -38,7 +38,7 @@ public class CenteredTextLayer : CATextLayer {
         #endif
         
         ctx.saveGState()
-        ctx.translate(x: 0.0, y: yDiff)
+        ctx.translateBy(x: 0.0, y: yDiff)
         super.draw(in: ctx)
         ctx.restoreGState()
     }

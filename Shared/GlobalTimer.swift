@@ -30,7 +30,7 @@ public class GlobalTimer {
         
         // Second
         let delayTime = DispatchTime.now() + Double(Int64(timetoNextSecond * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
-        DispatchQueue.main.after(when: delayTime) {
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
             // debugPrint("Second timer triggered")
             self.triggerEachSecond()
             NotificationCenter.default.post(name: Notification.Name(rawValue: Notifications.Second.rawValue), object: self)

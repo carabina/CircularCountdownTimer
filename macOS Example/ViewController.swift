@@ -17,7 +17,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        countdownTimerView.progressColor = NSColor.blue()
+        countdownTimerView.progressColor = NSColor.blue
 
     }
 

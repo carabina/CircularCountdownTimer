@@ -83,7 +83,7 @@ public class CountdownTimerView: UXView {
         }
     }
     
-    private let _defaultColor = UXColor.red()
+    private let _defaultColor = UXColor.red
     
     private var _inheritColor = true
     
@@ -155,7 +155,7 @@ public class CountdownTimerView: UXView {
     }
     
     private func setupDefaultColors() {
-        self.borderColor = UXColor.darkGray()
+        self.borderColor = UXColor.darkGray
         setTimerBackgroundColor()
     }
     
@@ -173,7 +173,7 @@ public class CountdownTimerView: UXView {
         setupDefaultColors()
         
         // Base Layer
-        baseLayer.fillColor = UXColor.white().cgColor
+        baseLayer.fillColor = UXColor.white.cgColor
         baseLayer.contentsScale = scaleFactor
         
         // Background Layer
@@ -181,23 +181,23 @@ public class CountdownTimerView: UXView {
         
         // Border Layer
         borderLayer.lineWidth = 1
-        borderLayer.fillColor = UXColor.clear().cgColor
+        borderLayer.fillColor = UXColor.clear.cgColor
         borderLayer.contentsScale = scaleFactor
         
         // Progress Layer
-        progressLayer.backgroundColor = UXColor.clear().cgColor
-        progressLayer.fillColor = UXColor.clear().cgColor
+        progressLayer.backgroundColor = UXColor.clear.cgColor
+        progressLayer.fillColor = UXColor.clear.cgColor
         progressLayer.strokeStart = 0
         progressLayer.strokeEnd = 1
         progressLayer.contentsScale = scaleFactor
         
         //Centre Layer
         centreLayer.lineWidth = 1
-        centreLayer.fillColor = UXColor.white().cgColor
+        centreLayer.fillColor = UXColor.white.cgColor
         centreLayer.contentsScale = scaleFactor
         
         //Text Layer
-        textLayer.foregroundColor = UXColor.black().cgColor
+        textLayer.foregroundColor = UXColor.black.cgColor
         textLayer.alignmentMode = kCAAlignmentCenter
         textLayer.contentsScale = scaleFactor
         
@@ -239,7 +239,11 @@ public class CountdownTimerView: UXView {
     #if os(iOS)
     override public func layoutSubviews() {
         super.layoutSubviews()
-            let fontSize = self.maxSize / 3.5
+        // When the view is not in the foreground, the animations get removed. This is a workaround to ensure they are resumed
+        if progressLayer.animationKeys() == nil {
+            updateTimer()
+        }
+        let fontSize = self.maxSize / 3.5
         textLayer.font = UXFont.monospacedDigitSystemFont(ofSize: fontSize,weight: UXFontWeightMedium)
         textLayer.fontSize = fontSize
     
@@ -255,6 +259,10 @@ public class CountdownTimerView: UXView {
     #elseif os(OSX)
     override public func layout() {
         super.layout()
+        // When the view is not in the foreground, the animations get removed. This is a workaround to ensure they are resumed
+        if progressLayer.animationKeys() == nil {
+            updateTimer()
+        }
         let fontSize = self.maxSize / 3.5
         textLayer.font = UXFont.monospacedDigitSystemFont(ofSize: fontSize,weight: UXFontWeightMedium)
         textLayer.fontSize = fontSize
@@ -273,8 +281,11 @@ public class CountdownTimerView: UXView {
         updateTimerLabel()
     }
     #endif
-    
-    
+}
+
+// MARK : Core Animation Functions
+
+extension CountdownTimerView {
     private func animate() {
         // First clear any running animations
         self.clearAnimations()
@@ -309,24 +320,6 @@ public class CountdownTimerView: UXView {
         progressLayer.removeAllAnimations()
         backgroundLayer.removeAllAnimations()
     }
-    
-    // When the view is not in the foreground, the animations get removed. This is a workaround to ensure they are resumed
-    #if os(iOS)
-    override public func willMove(toWindow newWindow: UXWindow?) {
-        if progressLayer.animationKeys() == nil {
-            updateTimer()
-        }
-        super.willMove(toWindow: newWindow)
-    }
-    #elseif os(OSX)
-    public override func viewWillMove(toWindow newWindow: UXWindow?) {
-    if progressLayer.animationKeys() == nil {
-    updateTimer()
-    }
-    super.viewWillMove(toWindow: newWindow)
-    }
-    #endif
-    
 }
 
 // MARK : macOS Only Functions
